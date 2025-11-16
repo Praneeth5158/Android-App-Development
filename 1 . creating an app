@@ -2,8 +2,8 @@
 # Type in terminal 
 # for creating an app we can also use the command as "flutter create app_name" or the below command
 
-flutter create --org com.zomato praneeth 
-# means we are saying to the flutter that iam creating an app for organization and the organization name is zomato and the app name is praneeth
+flutter create --org com.zomato app_name 
+# means we are saying to the flutter that iam creating an app for organization and the organization name is zomato and the app_name
 
 # after some time it create an app and in the left side we can see so many files that and all are by default came when we cretaed an app 
 # there we need to go to the "lib" folder after that go to the "main.dart"
