@@ -1,0 +1,48 @@
+# In main.dart, first we import Flutter's Material library
+import 'package:flutter/material.dart';
+
+# Code starts from the main() function
+# runApp() tells Flutter which widget to display first
+void main() {
+  runApp(MyApp());
+}
+
+# We create a class named "MyApp"
+# Class names should start with capital letters
+# StatelessWidget means the UI will not change during the app's lifetime
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  # build() method tells Flutter what UI to show on the screen
+  # MaterialApp is the main app container
+  # home: Scaffold creates a basic page structure
+  # backgroundColor sets the screen color
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.orange,
+      ),
+    );
+  }
+}
+
+=====================================================
+import 'package:flutter/material.dart';
+
+void main(){
+runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor:Colors.orange,
+      ),
+    );
+  }
+}
