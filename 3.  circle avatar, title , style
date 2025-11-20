@@ -1,0 +1,104 @@
+## ⭐ What Is the Use of the New Features Added?
+
+### 1️⃣ body: — Why We Use It?
+`body:` is the main area of the screen.  
+Whatever you want to show on the page (text, image, buttons) must be placed inside `body:`.
+
+Without body → screen will look empty.
+
+---
+
+### 2️⃣ Column — Why We Use It?
+`Column` arranges widgets **one below another** (vertical layout).
+
+Example:  
+Photo  
+↓  
+Name  
+↓  
+Profession
+
+---
+
+### 3️⃣ CircleAvatar — Why We Use It?
+`CircleAvatar` displays a **round profile picture**.  
+Perfect for:
+- Profile apps  
+- Business cards  
+- Contact list  
+- Portfolio UI  
+
+It makes the UI look **professional and clean**.
+
+---
+
+### 4️⃣ Text("Praneeth") — Why We Use It?
+Used to display your **name** on the screen.  
+Styling (font, size, color) makes it attractive.
+
+---
+
+### 5️⃣ Text("Mobile App Developer") — Why We Use It?
+This shows your **job role / profession** under your name.  
+The `letterSpacing` makes the text stylish.
+
+---
+
+### 6️⃣ Background Color — Why We Use It?
+Sets the **theme color** of your screen.  
+Teal color makes the profile look modern and clean.
+
+---
+
+Flutter naming rules →  
+Class names must start with **Capital Letters** (Best Practice).  
+Makes your code look **clean, professional, readable**.
+
+
+
+===========================================================================
+Entire code :
+
+
+import 'package:flutter/material.dart';
+
+void main(){
+runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor:Colors.teal,
+        body: Column(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage("images/corizo.png"),
+              radius: 100,
+              ),
+
+              Text("Praneeth",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontFamily:"Script"
+ 
+              ),),
+
+              Text("Mobile App Developer",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                letterSpacing: 5
+ 
+              ),)
+          ],
+          )
+      ),
+    );
+  }
+}
