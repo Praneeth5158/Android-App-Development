@@ -1,0 +1,196 @@
+// Padding around the divider to make it shorter & centered
+Padding(
+  padding: const EdgeInsets.only(left: 60, right: 60),
+  child: Divider(
+    thickness: 1,       // Divider line thickness
+    color: Colors.white // Divider color
+  ),
+),
+
+// Contact Card for Phone
+Padding(
+  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+  child: Container(
+    height: 60,             // Height of the contact card
+    color: Colors.white,    // White background card
+    child: Row(             // Row = horizontal layout (icon + text)
+      children: [
+        SizedBox(width: 10), // Space before icon
+
+        Icon(
+          Icons.call,       // Phone icon
+          color: Colors.teal,
+          size: 30
+        ),
+
+        SizedBox(width: 10), // Space between icon & text
+
+        Text(
+          "123456789",      // Phone number
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.teal
+          )
+        )
+      ],
+    )
+  ),
+),
+
+// Contact Card for Email
+Padding(
+  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+  child: Container(
+    height: 60,              // Card height
+    color: Colors.white,     // White card background
+    child: Row(
+      children: [
+        SizedBox(width: 10), // Space before icon
+
+        Icon(
+          Icons.email,       // Email icon
+          color: Colors.teal,
+          size: 30
+        ),
+
+        SizedBox(width: 10), // Space between icon & text
+
+        Text(
+          "praneeth@gmail.com",  // Email text
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.teal
+          )
+        )
+      ],
+    )
+  ),
+),
+
+
+
+==================================================================================
+
+Entire Code:
+
+// Importing Flutter Material Library
+// This allows us to use widgets like MaterialApp, Scaffold, Text, Icons etc.
+import 'package:flutter/material.dart';
+
+// main() is the starting point of every Flutter app
+// runApp() displays the widget we pass (MyApp) on the screen
+void main() {
+  runApp(MyApp());
+}
+
+// MyApp is our main widget
+// StatelessWidget = UI will NOT change while running
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // build() returns the UI that should appear on the screen
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        // Screen background color
+        backgroundColor: Colors.teal,
+
+        // Column = places all widgets vertically (top → bottom)
+        body: Column(
+          children: [
+
+            // Circular profile image
+            CircleAvatar(
+              backgroundImage: AssetImage("images/corizo.png"),
+              radius: 100,
+            ),
+
+            // Name text
+            Text(
+              "Praneeth",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontFamily: "Script",
+              ),
+            ),
+
+            // Job title text
+            Text(
+              "Mobile App Developer",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                letterSpacing: 5, // adds space between letters
+              ),
+            ),
+
+            // Divider with left & right padding
+            Padding(
+              padding: EdgeInsets.only(left: 60, right: 60),
+              child: Divider(
+                thickness: 1,
+                color: Colors.white,
+              ),
+            ),
+
+            // PHONE CONTACT CARD
+            Padding(
+              padding: EdgeInsets.only(top: 5, left: 20, right: 20),
+              child: Container(
+                height: 60,
+                color: Colors.white, // white box background
+                child: Row(
+                  children: [
+                    SizedBox(width: 10), // spacing
+                    Icon(
+                      Icons.call,
+                      color: Colors.teal,
+                      size: 30,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "123456789",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.teal,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            // EMAIL CONTACT CARD
+            Padding(
+              padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: Container(
+                height: 60,
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    SizedBox(width: 10),
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                      size: 30,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "praneeth@gmail.com",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.teal,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
