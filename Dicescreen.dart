@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'dart:math';
+
+class Dicescreen extends StatefulWidget {
+  const Dicescreen({super.key});
+
+  @override
+  State<Dicescreen> createState() => _DicescreenState();
+}
+
+class _DicescreenState extends State<Dicescreen> {
+  int dice1value = 1;
+  int dice2value = 2;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Column(
+        children: [
+          Row(children: [
+            Expanded(child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.asset("images/${dice1value}.png",),
+            ),
+            flex:1),
+            Expanded(child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.asset("images/${dice2value}.png",),
+            )),
+
+          ],),
+          RawMaterialButton(
+
+            onPressed: (){
+              dice1value = Random().nextInt(6)+1;
+              dice2value = Random().nextInt(6)+1;
+
+              setState(() {
+                
+              });
+            },
+            child:Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text("Roll the Dice"),
+            ),
+            fillColor: Colors.white,
+          ),
+          Text("${dice1value+dice2value}",style: TextStyle(
+            fontSize:200,
+            color:Colors.white,
+          )),
+          
+        ],
+      ),
+    );
+  }
+}
