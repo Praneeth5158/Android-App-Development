@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+class Homescreen extends StatefulWidget {
+  const Homescreen({super.key});
+
+  @override
+  State<Homescreen> createState() => _HomescreenState();
+}
+
+class _HomescreenState extends State<Homescreen> {
+  List<String> foodItems = ["Home Foods","Biryani","Pizza", "Shawarma","Burgers","Idly","FrenchFries","Dosa"];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.orange,
+      body:Column(
+        children: [
+          Text("What's on your mind",style :TextStyle(
+            fontSize:25,
+            color:Colors.black
+          )),
+          SizedBox(
+            height: 70,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: foodItems.length,
+              itemBuilder: (context,index){
+                return Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text("${foodItems[index]}"),
+                  ),
+                );
+              }),
+          )
+          
+        ],
+      )
+    );
+    
+  }
+}
