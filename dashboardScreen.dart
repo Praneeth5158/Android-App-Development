@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+class Dashboardscreen extends StatefulWidget {
+  const Dashboardscreen({super.key});
+
+  @override
+  State<Dashboardscreen> createState() => _DashboardscreenState();
+}
+
+class _DashboardscreenState extends State<Dashboardscreen> {
+  int selectedIndex = 2;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: (value){
+          selectedIndex = value;
+          setState(() {
+            
+          });
+
+        },
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.search),label: "Search"),
+        BottomNavigationBarItem(icon: Icon(Icons.heart_broken),label: "Heart"),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: "Person")
+      ]),
+    );
+  }
+}
